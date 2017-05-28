@@ -1,9 +1,11 @@
 import torchfile
-import cv2
+#import cv2
 import json
-import torch
+#import torch
 import numpy as np
 from sklearn.externals import joblib
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import accuracy_score
 
 def classification(types,finetune):
 	if finetune == 0 :
@@ -31,16 +33,24 @@ def classification(types,finetune):
 	print 'start training!'
 	svm.train(trainData, trainLabels, params=svm_params)
 	'''
-
+	print 'load Data and Labels!'
 	from sklearn import svm
-	clf = svm.SVC()
-	clf.fit(trainData, trainLabels)
+	from sklearn import linear_model
+	from sklearn.naive_bayes import GaussianNB
+	from sklearn.neighbors import KNeighborsClassifier
+	from sklearn.ensemble import RandomForestClassifier
+	from sklearn.tree import DecisionTreeClassifier
 	
-	if finetune == 2:
-		joblib.dump(clf, 'result/'+types+'/digits_svm_model_finetune.yml')
-	else:
-		joblib.dump(clf, 'result/'+types+'/digits_svm_model.yml')
-	print types+' '+str(finetune)+' svm file saved!'
+	clfs = {'svm':svm.SVC(),'linear':linear_model.SGDClassifier(loss="hinge", penalty="l2"), 'guassian':GaussianNB(),'KNN':KNeighborsClassifier(),'Random':RandomForestClassifier(),'Decision':DecisionTreeClassifier()}
+
+	for name,clf in clfs.items():
+		clf.fit(trainData, trainLabels)
+	
+		if finetune == 2:
+			joblib.dump(clf, 'result/'+types+'/digits_'+name+'_model_finetune.yml')
+		else:
+			joblib.dump(clf, 'result/'+types+'/digits_'+name+'_model.yml')
+		print types+' '+str(finetune)+' '+name +' file saved!'
 	
 
 def test(types,finetune):
@@ -56,12 +66,19 @@ def test(types,finetune):
 		testLabels = testData.labels
                 testData = testData.features
 	
-	if finetune == 2:
-		clf = joblib.load('result/'+types+'/digits_svm_model_finetune.yml')
-	else:
-		clf = joblib.load('result/'+types+'/digits_svm_model.yml')
-	results = clf.score(testData,testLabels)
-	print results
+	names = ['svm','linear','guassian','KNN','Random','Decision']
+	for name in names:
+		if finetune == 2:
+			clf = joblib.load('result/'+types+'/digits_'+name+'_model_finetune.yml')
+		else:
+			clf = joblib.load('result/'+types+'/digits_'+name+'_model.yml')
+		results = clf.predict(testData)#testLabels)
+		print name + ' result'
+		print 'Mean_square: '+str(mean_squared_error(testLabels,results))
+		try:
+			print 'accuracy_score: '+str(accuracy_score(testLabels,results))
+		except:
+			pass
 
 classification('hog',0)
 test('hog',0)

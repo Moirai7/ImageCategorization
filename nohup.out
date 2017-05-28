@@ -1,0 +1,150 @@
+load Data and Labels!
+hog 0 KNN file saved!
+hog 0 svm file saved!
+hog 0 linear file saved!
+hog 0 Decision file saved!
+hog 0 Random file saved!
+hog 0 guassian file saved!
+svm result
+Mean_square: 28.3
+accuracy_score: 0.185
+linear result
+Mean_square: 18.9925
+accuracy_score: 0.29
+guassian result
+Mean_square: 14.995
+accuracy_score: 0.33
+KNN result
+Mean_square: 21.1325
+accuracy_score: 0.1425
+Random result
+Mean_square: 20.65
+accuracy_score: 0.1625
+Decision result
+Mean_square: 22.39
+accuracy_score: 0.1425
+load Data and Labels!
+sift 0 KNN file saved!
+sift 0 svm file saved!
+sift 0 linear file saved!
+sift 0 Decision file saved!
+sift 0 Random file saved!
+sift 0 guassian file saved!
+svm result
+Mean_square: 29.99
+accuracy_score: 0.1625
+linear result
+Mean_square: 20.7775
+accuracy_score: 0.27
+guassian result
+Mean_square: 24.29
+accuracy_score: 0.125
+KNN result
+Mean_square: 22.68
+accuracy_score: 0.17
+Random result
+Mean_square: 23.735
+accuracy_score: 0.145
+Decision result
+Mean_square: 22.2625
+accuracy_score: 0.1125
+load Data and Labels!
+vgg 1 KNN file saved!
+vgg 1 svm file saved!
+vgg 1 linear file saved!
+vgg 1 Decision file saved!
+vgg 1 Random file saved!
+vgg 1 guassian file saved!
+svm result
+Mean_square: 0.82
+accuracy_score: 0.9725
+linear result
+Mean_square: 0.555
+accuracy_score: 0.98
+guassian result
+Mean_square: 3.6075
+accuracy_score: 0.885
+KNN result
+Mean_square: 0.83
+accuracy_score: 0.9525
+Random result
+Mean_square: 1.3525
+accuracy_score: 0.9525
+Decision result
+Mean_square: 2.915
+accuracy_score: 0.8825
+load Data and Labels!
+vgg 2 KNN file saved!
+vgg 2 svm file saved!
+vgg 2 linear file saved!
+vgg 2 Decision file saved!
+vgg 2 Random file saved!
+vgg 2 guassian file saved!
+svm result
+Mean_square: 14.4125
+accuracy_score: 0.575
+linear result
+Mean_square: 0.215
+accuracy_score: 0.9925
+guassian result
+Mean_square: 0.5325
+accuracy_score: 0.98
+KNN result
+Mean_square: 0.4075
+accuracy_score: 0.9875
+Random result
+Mean_square: 0.41
+accuracy_score: 0.985
+Decision result
+Mean_square: 1.7725
+accuracy_score: 0.9425
+load Data and Labels!
+resnet 1 KNN file saved!
+resnet 1 svm file saved!
+resnet 1 linear file saved!
+resnet 1 Decision file saved!
+resnet 1 Random file saved!
+resnet 1 guassian file saved!
+svm result
+Mean_square: 29.755
+accuracy_score: 0.17
+linear result
+Mean_square: 15.6425
+accuracy_score: 0.275
+guassian result
+Mean_square: 16.18
+accuracy_score: 0.3425
+KNN result
+Mean_square: 17.73
+accuracy_score: 0.375
+Random result
+Mean_square: 17.605
+accuracy_score: 0.3825
+Decision result
+Mean_square: 20.4575
+accuracy_score: 0.3
+load Data and Labels!
+resnet 2 KNN file saved!
+resnet 2 svm file saved!
+resnet 2 linear file saved!
+resnet 2 Decision file saved!
+resnet 2 Random file saved!
+resnet 2 guassian file saved!
+svm result
+Mean_square: 0.02
+accuracy_score: 0.995
+linear result
+Mean_square: 0.105
+accuracy_score: 0.99
+guassian result
+Mean_square: 0.115
+accuracy_score: 0.9875
+KNN result
+Mean_square: 0.05
+accuracy_score: 0.995
+Random result
+Mean_square: 0.0825
+accuracy_score: 0.99
+Decision result
+Mean_square: 1.3125
+accuracy_score: 0.9575

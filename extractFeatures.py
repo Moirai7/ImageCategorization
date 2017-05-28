@@ -1,6 +1,5 @@
 import cv2
 import json
-import torch
 import numpy as np
 from numpy.linalg import norm
 
@@ -86,7 +85,7 @@ def extract(types):
 			im = cv2.imread(_path)
 			im = cv2.resize(im,(256,256))
 			im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)  
-			s = cv2.SIFT()
+			s = cv2.SIFT(128)
 			keypoints,des = s.detectAndCompute(im,None)
 			des = des.reshape(1, -1)[0].tolist()
 			_sift.append(des)
